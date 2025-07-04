@@ -1,0 +1,282 @@
+<?xml version="1.0" ?>
+<robot name="robotaksi" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+<xacro:include filename="$(find robotaksi_description)/urdf/materials.xacro" />
+<xacro:include filename="$(find robotaksi_description)/urdf/robotaksi.trans" />
+<xacro:include filename="$(find robotaksi_description)/urdf/robotaksi.gazebo" />
+<link name="base_link">
+  <inertial>
+    <origin xyz="-1.1292113612587513 0.5970365239518428 0.14603519068014373" rpy="0 0 0"/>
+    <mass value="521.1228669119488"/>
+    <inertia ixx="58.706556" iyy="205.881005" izz="240.801821" ixy="0.158994" iyz="-0.055119" ixz="-0.742847"/>
+  </inertial>
+  <visual>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find robotaksi_description)/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find robotaksi_description)/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="right_back_wheel_1">
+  <inertial>
+    <origin xyz="4.7910521105976045e-08 -0.058233567985884686 -2.854989078204806e-07" rpy="0 0 0"/>
+    <mass value="91.12805244462666"/>
+    <inertia ixx="2.594068" iyy="5.072499" izz="2.594069" ixy="0.0" iyz="-0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="1.85 -0.104473 -0.207849" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find robotaksi_description)/meshes/right_back_wheel_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="1.85 -0.104473 -0.207849" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find robotaksi_description)/meshes/right_back_wheel_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="right_front_wheel_1">
+  <inertial>
+    <origin xyz="4.2653539589210254e-08 -0.058233320280351344 -1.2367254106915304e-07" rpy="0 0 0"/>
+    <mass value="91.12805244462666"/>
+    <inertia ixx="2.594068" iyy="5.072499" izz="2.594069" ixy="-0.0" iyz="0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.45 -0.112028 -0.207326" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find robotaksi_description)/meshes/right_front_wheel_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0.45 -0.112028 -0.207326" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find robotaksi_description)/meshes/right_front_wheel_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="left_back_wheel_1">
+  <inertial>
+    <origin xyz="6.692394793894607e-08 0.05823327338573292 -7.957139236403066e-08" rpy="0 0 0"/>
+    <mass value="91.12805244462666"/>
+    <inertia ixx="2.594068" iyy="5.072499" izz="2.594069" ixy="0.0" iyz="0.0" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.45 -1.097972 -0.207326" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find robotaksi_description)/meshes/left_back_wheel_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0.45 -1.097972 -0.207326" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find robotaksi_description)/meshes/left_back_wheel_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="left_front_wheel_1">
+  <inertial>
+    <origin xyz="7.281935054948008e-08 0.05823381094535307 -4.525301861013631e-08" rpy="0 0 0"/>
+    <mass value="91.12805244462666"/>
+    <inertia ixx="2.594068" iyy="5.072499" izz="2.594069" ixy="0.0" iyz="0.0" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="1.85 -1.097971 -0.207326" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find robotaksi_description)/meshes/left_front_wheel_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="1.85 -1.097971 -0.207326" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find robotaksi_description)/meshes/left_front_wheel_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<joint name="right_back" type="continuous">
+  <origin xyz="-1.85 0.104473 0.207849" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="right_back_wheel_1"/>
+  <axis xyz="0.0 1.0 -0.0"/>
+</joint>
+
+<joint name="right_front" type="continuous">
+  <origin xyz="-0.45 0.112028 0.207326" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="right_front_wheel_1"/>
+  <axis xyz="-0.0 1.0 0.0"/>
+</joint>
+
+<joint name="left_front" type="continuous">
+  <origin xyz="-0.45 1.097972 0.207326" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="left_back_wheel_1"/>
+  <axis xyz="0.0 1.0 0.0"/>
+</joint>
+
+<joint name="back_front" type="continuous">
+  <origin xyz="-1.85 1.097971 0.207326" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="left_front_wheel_1"/>
+  <axis xyz="0.0 1.0 0.0"/>
+</joint>
+
+<ros2_control name="RobotHardware" type="system">
+  <hardware>
+    <plugin>gazebo_ros2_control/GazeboSystem</plugin>
+  </hardware>
+  
+  <joint name="right_back">
+    <command_interface name="velocity">
+      <param name="min">-20</param>
+      <param name="max">20</param>
+    </command_interface>
+    <command_interface name="effort">
+      <param name="min">-50</param>
+      <param name="max">50</param>
+    </command_interface>
+    <state_interface name="velocity"/>
+    <state_interface name="position"/>
+    <state_interface name="effort"/>
+  </joint>
+
+  <joint name="right_front">
+    <command_interface name="velocity">
+      <param name="min">-20</param>
+      <param name="max">20</param>
+    </command_interface>
+    <command_interface name="effort">
+      <param name="min">-50</param>
+      <param name="max">50</param>
+    </command_interface>
+    <state_interface name="velocity"/>
+    <state_interface name="position"/>
+    <state_interface name="effort"/>
+  </joint>
+
+  <joint name="left_front">
+    <command_interface name="velocity">
+      <param name="min">-20</param>
+      <param name="max">20</param>
+    </command_interface>
+    <command_interface name="effort">
+      <param name="min">-50</param>
+      <param name="max">50</param>
+    </command_interface>
+    <state_interface name="velocity"/>
+    <state_interface name="position"/>
+    <state_interface name="effort"/>
+  </joint>
+
+  <joint name="back_front">
+    <command_interface name="velocity">
+      <param name="min">-20</param>
+      <param name="max">20</param>
+    </command_interface>
+    <command_interface name="effort">
+      <param name="min">-50</param>
+      <param name="max">50</param>
+    </command_interface>
+    <state_interface name="velocity"/>
+    <state_interface name="position"/>
+    <state_interface name="effort"/>
+  </joint>
+
+</ros2_control>
+
+  <!-- Intel RealSense D435 Camera -->
+  <link name="realsense_d435_link">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="0.072"/>
+      <inertia ixx="0.000021" iyy="0.000021" izz="0.000005" 
+               ixy="0" iyz="0" ixz="0"/>
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.090 0.025 0.025"/>
+      </geometry>
+      <material name="black">
+        <color rgba="0.3 0.3 0.3 1.0"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.090 0.025 0.025"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <!-- RealSense Camera Mount Joint -->
+  <joint name="realsense_d435_joint" type="fixed">
+    <origin xyz="-0.61 0.60 0.88" rpy="0 0 -1.59"/>
+    <parent link="base_link"/>
+    <child link="realsense_d435_link"/>
+  </joint>
+
+  <!-- Camera Optical Frame -->
+  <link name="realsense_d435_depth_optical_frame"/>
+  <joint name="realsense_d435_depth_optical_joint" type="fixed">
+    <origin xyz="0 0 0" rpy="-1.5708 0 -1.5708"/>
+    <parent link="realsense_d435_link"/>
+    <child link="realsense_d435_depth_optical_frame"/>
+  </joint>
+
+  <link name="realsense_d435_color_optical_frame"/>
+  <joint name="realsense_d435_color_optical_joint" type="fixed">
+    <origin xyz="0 0 0" rpy="-1.5708 0 -1.5708"/>
+    <parent link="realsense_d435_link"/>
+    <child link="realsense_d435_color_optical_frame"/>
+  </joint>
+
+  <!-- RPLiDAR S2 -->
+  <link name="rplidar_s2_link">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="0.190"/>
+      <inertia ixx="0.0001" iyy="0.0001" izz="0.0001" 
+               ixy="0" iyz="0" ixz="0"/>
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <cylinder radius="0.038" length="0.041"/>
+      </geometry>
+      <material name="black">
+        <color rgba="0.1 0.1 0.1 1.0"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <cylinder radius="0.038" length="0.041"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <!-- RPLiDAR Mount Joint -->
+  <joint name="rplidar_s2_joint" type="fixed">
+    <origin xyz="-0.13 0.60 0.57" rpy="0 0 0"/>
+    <parent link="base_link"/>
+    <child link="rplidar_s2_link"/>
+  </joint>
+
+</robot>
