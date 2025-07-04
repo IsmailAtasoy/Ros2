@@ -227,7 +227,7 @@
 
   <!-- RealSense Camera Mount Joint -->
   <joint name="realsense_d435_joint" type="fixed">
-    <origin xyz="-0.61 0.60 0.88" rpy="0 0 -1.59"/>
+    <origin xyz="-0.61 0.57 0.86" rpy="0 0 0"/>
     <parent link="base_link"/>
     <child link="realsense_d435_link"/>
   </joint>
